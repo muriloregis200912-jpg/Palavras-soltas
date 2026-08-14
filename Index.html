@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Páginas Soltas — um espaço para ler, escrever e compartilhar poesias e textos."
+  >
+
+  <title>Páginas Soltas</title>
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- CABEÇALHO -->
+
+  <header class="topbar">
+
+    <a href="#inicio" class="logo">
+      <span class="logo-icon">✦</span>
+      Páginas Soltas
+    </a>
+
+    <button
+      class="menu-button"
+      id="menuButton"
+      aria-label="Abrir menu"
+    >
+      ☰
+    </button>
+
+    <nav id="navigation">
+
+      <a href="#inicio">
+        Início
+      </a>
+
+      <a href="#biblioteca">
+        Biblioteca
+      </a>
+
+      <a href="#publicar">
+        Publicar
+      </a>
+
+      <a href="#sobre">
+        Sobre
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <!-- CONTEÚDO -->
+
+  <main>
+
+    <!-- INÍCIO -->
+
+    <section id="inicio" class="hero">
+
+      <div class="hero-content">
+
+        <p class="eyebrow">
+          UM LUGAR PARA PALAVRAS
+        </p>
+
+        <h1>
+          Onde cada página
+          <br>
+          <em>encontra uma história.</em>
+        </h1>
+
+        <p class="hero-description">
+          Leia, escreva e compartilhe poesias,
+          contos e pensamentos com outras pessoas
+          apaixonadas por palavras.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a
+            href="#biblioteca"
+            class="button button-primary"
+          >
+            Explorar textos
+          </a>
+
+          <a
+            href="#publicar"
+            class="button button-secondary"
+          >
+            Publicar meu texto
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- FRASE DE DESTAQUE -->
+
+      <div class="quote-card">
+
+        <span class="quote-mark">
+          “
+        </span>
+
+        <p>
+          Algumas páginas não foram feitas
+          para serem esquecidas.
+        </p>
+
+        <div class="quote-line"></div>
+
+        <small>
+          Páginas Soltas
+        </small>
+
+      </div>
+
+    </section>
+
+
+    <!-- BIBLIOTECA -->
+
+    <section
+      id="biblioteca"
+      class="section"
+    >
+
+      <div class="section-header">
+
+        <div>
+
+          <p class="eyebrow">
+            BIBLIOTECA
+          </p>
+
+          <h2>
+            Histórias que ficaram.
+          </h2>
+
+        </div>
+
+        <span
+          id="textCount"
+          class="text-count"
+        ></span>
+
+      </div>
+
+
+      <!-- BUSCA -->
+
+      <div class="filters">
+
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Buscar por título, autor ou palavra..."
+          autocomplete="off"
+        >
+
+
+        <select id="categoryFilter">
+
+          <option value="Todos">
+            Todas as categorias
+          </option>
+
+          <option value="Poesia">
+            Poesia
+          </option>
+
+          <option value="Conto">
+            Conto
+          </option>
+
+          <option value="Reflexão">
+            Reflexão
+          </option>
+
+          <option value="Romance">
+            Romance
+          </option>
+
+          <option value="Outros">
+            Outros
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- TEXTOS -->
+
+      <div
+        id="textLibrary"
+        class="text-grid"
+      ></div>
+
+
+      <!-- NENHUM RESULTADO -->
+
+      <div
+        id="emptyMessage"
+        class="empty-message hidden"
+      >
+
+        <div class="empty-icon">
+          ⌁
+        </div>
+
+        <h3>
+          Nenhum texto encontrado
+        </h3>
+
+        <p>
+          Tente fazer outra busca ou publique
+          o primeiro texto dessa categoria.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- PUBLICAR -->
+
+    <section
+      id="publicar"
+      class="publish-section"
+    >
+
+      <div class="section publish-container">
+
+        <div class="section-header">
+
+          <div>
+
+            <p class="eyebrow">
+              PUBLICAÇÃO
+            </p>
+
+            <h2>
+              Deixe suas palavras aqui.
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <form
+          id="publishForm"
+          class="publish-form"
+        >
+
+          <!-- TÍTULO E AUTOR -->
+
+          <div class="form-row">
+
+            <label>
+
+              Título
+
+              <input
+                type="text"
+                id="titleInput"
+                maxlength="100"
+                placeholder="Ex.: Vermelhos como fogo"
+                required
+              >
+
+            </label>
+
+
+            <label>
+
+              Autor
+
+              <input
+                type="text"
+                id="authorInput"
+                maxlength="60"
+                placeholder="Seu nome ou pseudônimo"
+                required
+              >
+
+            </label>
+
+          </div>
+
+
+          <!-- CATEGORIA -->
+
+          <label>
+
+            Categoria
+
+            <select
+              id="publishCategory"
+              required
+            >
+
+              <option value="Poesia">
+                Poesia
+              </option>
+
+              <option value="Conto">
+                Conto
+              </option>
+
+              <option value="Reflexão">
+                Reflexão
+              </option>
+
+              <option value="Romance">
+                Romance
+              </option>
+
+              <option value="Outros">
+                Outros
+              </option>
+
+            </select>
+
+          </label>
+
+
+          <!-- TEXTO -->
+
+          <label>
+
+            Seu texto
+
+            <textarea
+              id="contentInput"
+              rows="14"
+              maxlength="10000"
+              placeholder="Escreva aqui..."
+              required
+            ></textarea>
+
+          </label>
+
+
+          <!-- PUBLICAR -->
+
+          <div class="form-footer">
+
+            <small>
+              Nesta primeira versão, os textos ficam
+              salvos neste navegador.
+            </small>
+
+            <button
+              type="submit"
+              class="button button-primary"
+            >
+              Publicar texto
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+    <!-- SOBRE -->
+
+    <section
+      id="sobre"
+      class="section about-section"
+    >
+
+      <p class="eyebrow">
+        SOBRE O PROJETO
+      </p>
+
+      <h2>
+        Um pequeno espaço para grandes histórias.
+      </h2>
+
+      <p>
+        O Páginas Soltas nasceu para aproximar quem
+        escreve de quem gosta de ler. Aqui, cada
+        pessoa pode encontrar um lugar para
+        transformar pensamentos em histórias,
+        poemas e versos.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- LEITOR -->
+
+  <div
+    id="readerModal"
+    class="modal hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="readerTitle"
+  >
+
+    <div
+      class="modal-background"
+      data-close-reader
+    ></div>
+
+
+    <article class="reader">
+
+      <button
+        class="close-button"
+        data-close-reader
+        aria-label="Fechar"
+      >
+        ×
+      </button>
+
+
+      <p
+        id="readerCategory"
+        class="eyebrow"
+      ></p>
+
+
+      <h2 id="readerTitle"></h2>
+
+
+      <p
+        id="readerAuthor"
+        class="reader-author"
+      ></p>
+
+
+      <div
+        id="readerContent"
+        class="reader-content"
+      ></div>
+
+
+      <div
+        id="readerDate"
+        class="reader-date"
+      ></div>
+
+    </article>
+
+  </div>
+
+
+  <!-- NOTIFICAÇÃO -->
+
+  <div
+    id="toast"
+    class="toast"
+  ></div>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script src="app.js"></script>
+
+</body>
+</html>
